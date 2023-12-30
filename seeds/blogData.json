@@ -1,0 +1,23 @@
+[
+  {
+    "blog_content": "This is the content of the first blog.",
+    "blog_tittle": "First Blog Title",
+    "author": "John Doe",
+    "user_id": 1
+
+  },
+  {
+    "blog_content": "Another interesting blog post!",
+    "blog_tittle": "Exciting Blog",
+    "author": "Jane Smith",
+    "user_id": 2
+
+  },
+  {
+    "blog_content": "A blog post about a fascinating topic.",
+    "blog_tittle": "Fascinating Blog",
+    "author": "Alex Johnson",
+    "user_id": 3
+
+  }
+]

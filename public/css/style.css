@@ -1,0 +1,125 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #333; 
+  color: #fff; 
+  padding: 1rem;
+}
+.grey {
+  color: rgb(0, 0, 0);
+}
+main {
+  padding: 1rem;
+}
+h1 {
+  text-align: center;
+  font-size: 3em; /* Adjust the font size as needed */
+  margin-top: 1px; /* Adjust the top margin as needed */
+  background: linear-gradient(to right, #00ff11, #00b1e2); 
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+h2 {
+  color: #333; 
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  margin-top: 2rem;
+}
+.container,
+.blog-container,
+.comments-container {
+  word-wrap: break-word;
+}
+
+.blog-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.comments-container {
+  background-color: #f0f0f0; /* Different background color for comments */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.deleteBlog {
+  position: absolute;
+  top: 10px; 
+  right: 50px; 
+  height: 30px;
+  width: 30px;
+}
+
+.updateBlog {
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  height: 30px;
+  width: 30px;
+}
+
+.newComment {
+  position: absolute;
+  top: 10px; 
+  right: 90px; 
+  height: 30px;
+  width: 30px;
+}
+
+.editComment {
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  height: 30px;
+  width: 30px;
+}
+
+.deleteComment {
+  position: absolute;
+  top: 10px; 
+  right: 50px; 
+  height: 30px;
+  width: 30px;
+}
+
+footer {
+  background-color: #333; 
+  color: #fff; 
+  padding: 1rem;
+  text-align: center;
+}
+
+.modal-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.iconContainer{
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+  }
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <title>Blog</title>
+
+</head>
+
+<body>
+  <!-- Navbar or header section -->
+  <header>
+    <div>
+      <h1>ByteBurst</h1>
+    </div>
+    <nav>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+        Login
+      </button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">
+        Register
+      </button>
+       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#logout" id="logout">
+        Logout
+      </button>
+
+      <div class="justify-center">
+        Welcome, {{ firstName }} {{ lastName }} <br>
+        {{ email }}
+     
+
+     
+      <p id="currentDate"></p>
+    </div>
+      <!-- Your navigation links, logo, etc. -->
+    </nav>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <!-- LOGIN MODAL-->
+    <!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="login">
+          <label for="loginEmail">EMAIL</label>
+          <input type="email" id="loginEmail" name="email" placeholder="Enter your email" autocomplete="username" required>
+          <br />
+          <br />
+          <label for="loginPassword">PASSWORD</label>
+          <input type="password" id="loginPassword" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+          <br />
+          <br />
+          <button type="submit" class="btn btn-primary">LOGIN</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER MODAL  -->
+
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Register</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="register-form">
+          <label for="registerFirstName">FIRST NAME</label>
+          <input type="text" id="registerFirstName" name="firstName" placeholder="Enter your first name" required>
+          <br />
+          <br />
+          <label for="registerLastName">LAST NAME</label>
+          <input type="text" id="registerLastName" name="lastName" placeholder="Enter your last name" required>
+          <br />
+          <br />
+          <label for="registerEmail">EMAIL</label>
+          <input type="text" id="registerEmail" name="email" placeholder="Enter your email" autocomplete="username" required>
+          <br />
+          <br />
+          <label for="registerPassword">PASSWORD</label>
+          <input type="password" id="registerPassword" name="password" placeholder="Choose a password" autocomplete="new-password" required>
+          <br />
+          <br />
+          <label for="registerConfirmPassword">CONFIRM PASSWORD</label>
+          <input type="password" id="registerConfirmPassword" name="confirmPassword" placeholder="Confirm your password" autocomplete="new-password" required>
+          <br />
+          <br />
+          <button type="submit" class="btn btn-primary">REGISTER</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- UPDATE MODAL -->
+
+      <!-- Modal structure -->
+      <div class="modal fade" id="updateBlog" tabindex="-1" role="dialog" aria-labelledby="blogModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="blogModalLabel">Update a Blog</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Form for posting a blog -->
+              <form id="updateBlog">
+                <div class="form-group">
+                  <label for="tittleModal">Blog Title</label>
+                  <input type="text" class="form-control" id="ttittleModal" name="blog_tittle">
+                </div>
+                <div class="form-group">
+                  <label for="authorModal">Author</label>
+                  <input type="text" class="form-control" id="aauthorModal" name="author">
+                </div>
+                <div class="form-group">
+                  <label for="blogContent">Blog Content</label>
+                  <textarea class="form-control" id="bblogContent" name="blog_content" rows="3"></textarea>
+                  <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Blog</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- POST MODAL -->
+    <div class="container mt-5">
+      <!-- Button to trigger the modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postBlog">
+        Post a Blog
+      </button>
+
+      <!-- Modal structure -->
+      <div class="modal fade" id="postBlog" tabindex="-1" role="dialog" aria-labelledby="blogModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="blogModalLabel">Post a Blog</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Form for posting a blog -->
+              <form id="blogForm">
+                <div class="form-group">
+                  <label for="tittleModal">Blog Title</label>
+                  <input type="text" class="form-control" id="tittleModal" name="blog_tittle">
+                </div>
+                <div class="form-group">
+                  <label for="authorModal">Author</label>
+                  <input type="text" class="form-control" id="authorModal" name="author">
+                </div>
+                <div class="form-group">
+                  <label for="blogContent">Blog Content</label>
+                  <textarea class="form-control" id="blogContent" name="blog_content" rows="3"></textarea>
+                  <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Blog</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- POST COMMENT MODAL -->
+
+      <!-- Modal structure -->
+      <div class="modal fade" id="commentform" tabindex="-1" role="dialog" aria-labelledby="blogModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="blogModalLabel">Post a Comment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Form for posting a blog -->
+              <form id="commentform">
+                <div class="form-group">
+                  <label for="commentContent">Comment</label>
+                  <textarea class="form-control" id="commentContent" name="blog_content" rows="3"></textarea>
+                  <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Comment</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- UPDATE COMMENT MODAL -->
+
+      <!-- Modal structure -->
+      <div class="modal fade" id="updatecommentform" tabindex="-1" role="dialog" aria-labelledby="updateblogModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateblogModalLabel">Update a Comment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Form for posting a blog -->
+              <form id="updatecommentform">
+                <div class="form-group">
+                  <label for="updatecommentContent">Comment</label>
+                  <textarea class="form-control" id="updatecommentContent" name="updateblog_content" rows="3"></textarea>
+                  <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Comment</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<!-- Display blog posts -->
+<div>
+  <h3>Blog Posts</h3>
+  <ul>
+    {{#if blogs.length}}
+      {{#each blogs}}
+        <div class="blog-container">
+          <div class="iconContainer">
+          <img type="button" class="deleteBlog" src="css/icons/bin.png" data-id="{{id}}">
+          <img type="button" class="updateBlog" id="updateBlog" data-toggle="modal" data-target="#updateBlog" src="css/icons/edit-info.png" data-id="{{id}}" value="{{id}}"/>
+          <img type="button" class="newComment" id="newComment" data-toggle="modal" data-target="#commentform" src="css/icons/comment.png" data-id="{{id}}" value="{{id}}"/>
+          </div>
+        
+
+          
+          <h4> Tittle:    <span class="grey"> {{ blog_tittle }}</span></h4>
+          <p>{{ blog_content }}</p>
+          <p>   Author:   <span class="grey"> {{ author }}</span></p>
+          <p id="blogTime">{{updated_at}}</p>
+        </div>
+          
+ 
+
+          <!-- Display comments for the current blog post -->
+          <ul>
+            {{#if Comments.length}}
+              {{#each Comments}}
+                <li class="comments-container">
+                  <div class="iconContainer">
+                    <img type="button" class="deleteComment" src="css/icons/delete.png" data-id="{{id}}">
+                    <img type="button" class="editComment" id="editComment" data-toggle="modal" data-target="#updatecommentform" src="css/icons/editComments.png" data-id="{{id}}" value="{{id}}"/>
+                  </div>
+                   <h3>Comment:</h3>
+                  <p>  {{ comment }}</p>
+                  <p class="commentPostId" data-id="{{id}}"></p>
+                  <p id="commentTime">{{updated_at}}</p>
+                
+
+
+
+                </li>
+              {{/each}}
+            {{else}}
+            
+            </ul>
+
+              
+
+            {{/if}}
+          </ul>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No blog posts found.</p>
+  {{/if}}
+</div>
+
+
+
+<script src="js/blog.js"></script>
+<script src="js/deleteIcon.js"></script>
+<script src="js/deleteIconComment.js"></script>
+<script src="js/login.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/modalPostButton.js"></script>
+<script src="js/submitComment.js"></script>
+<script src="js/register.js"></script>
+<script src="js/updateComment.js"></script>
+<script src="js/updateIconBlog.js"></script>
